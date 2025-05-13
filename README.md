@@ -11,5 +11,7 @@ npm run build - to prepare build version for production <br>
 
 ### Screenshots: <br>
 
-![image](https://github.com/user-attachments/assets/068548f1-831b-447f-b384-ac63d0e0c9f1)<br>
-![image](https://github.com/user-attachments/assets/efdb7ea9-7b42-42b7-842b-ac1ad6008140)<br>
+![image](https://github.com/user-attachments/assets/8b41fe95-4075-4907-9d92-ba571c69dea5)
+<br>
+![image](https://github.com/user-attachments/assets/e01efe72-1769-4f1b-9f7d-856d6b90273e)
+<br>
