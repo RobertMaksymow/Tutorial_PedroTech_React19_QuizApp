@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Results from "./Results";
 
 const Quiz = () => {
   const questionBank = [
@@ -27,6 +28,7 @@ const Quiz = () => {
   const initialAnswers = [null, null, null];
   const [userAnswers, setUserAnswers] = useState(initialAnswers);
   const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [isQuizCompleted, setIsQuizCompleted] = useState(false);
 
   const selectedAnswer = userAnswers[currentQuestion];
 
@@ -41,11 +43,10 @@ const Quiz = () => {
   };
 
   const handleNextQuestion = () => {
-    if (currentQuestion < questionBank.length - 1) {
-      setCurrentQuestion(currentQuestion + 1);
+    if (currentQuestion === questionBank.length - 1) {
+      setIsQuizCompleted(true);
     } else {
-      console.log("Quiz completed");
-      // Handle quiz completion logic here
+      setCurrentQuestion(currentQuestion + 1);
     }
   };
   const handlePreviousQuestion = () => {
@@ -55,9 +56,27 @@ const Quiz = () => {
       console.log("Already at the first question");
     }
   };
+
+  const restartQuiz = () => {
+    console.log("Restarting quiz...");
+    setUserAnswers(initialAnswers);
+    setCurrentQuestion(0);
+    setIsQuizCompleted(false);
+  };
+
+  if (isQuizCompleted) {
+    return (
+      <Results
+        userAnswers={userAnswers}
+        questionBank={questionBank}
+        restartQuiz={restartQuiz}
+      />
+    );
+  }
+
   return (
     <div>
-      <h2>Question 1</h2>
+      <h2>Question {currentQuestion + 1}</h2>
       <p className="question">{questionBank[currentQuestion].question}</p>
       {questionBank[currentQuestion].options.map((option) => (
         <button
