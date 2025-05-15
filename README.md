@@ -1,13 +1,12 @@
 React 19 crash course by PedroTech<br>
 YT tutorial: https://www.youtube.com/watch?v=3OqiKTyH4r0<br>
-<br>
 
 ### How to run:
-
-npm i - to install all dependencies <br>
-npm run dev - to run locally <br>
-npm run build - to prepare build version for production <br>
-<br>
+```
+npm i           - to install all dependencies <br>
+npm run dev     - to run locally <br>
+npm run build   - to prepare build version for production <br>
+```
 
 ### Screenshots: <br>
 
